@@ -43,5 +43,9 @@ class StringConst {
   static const String weWillFindCollege =
       "We'll find college for you while you concentrate on your studies.";
   static const String letsFindYourCollege = "Let's Find Your College";
+  static const String home = "Home";
+  static const String findMyCollege = "Find My College";
+  static const String logout = "Logout";
+  static const String aboutUs = "About us";
 }
 //TODO:

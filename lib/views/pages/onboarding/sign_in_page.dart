@@ -13,7 +13,6 @@ import 'package:my_college/views/widgets/custom_titles/custom_title_1.dart';
 
 class SignInPage extends StatelessWidget {
   SignInPage({Key? key}) : super(key: key);
-  static const id = '/SignInPage';
 
   final _key = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();

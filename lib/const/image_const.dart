@@ -13,5 +13,10 @@ class ImageConst {
 
   static const String study = 'assets/images/study.png';
 
+  static const String bg = 'assets/images/bg.jpeg';
+
+  static const String college = 'assets/images/college.jpeg';
+  static const String college2 = 'assets/images/college2.jpeg';
+
   static const String studyJson = 'assets/lottie/study.json';
 }

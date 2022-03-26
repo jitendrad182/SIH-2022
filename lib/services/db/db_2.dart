@@ -39,6 +39,10 @@ class DbController2 extends GetxController {
     return _userProfileModel.length;
   }
 
+  String userId() {
+    return _userProfileModel[0].userId;
+  }
+
   String avatarImageConst() {
     return ImageConst.avatarImageConst(_userProfileModel[0].avatar);
   }

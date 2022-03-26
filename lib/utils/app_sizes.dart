@@ -9,6 +9,12 @@ class AppSizes {
     width10 = Get.mediaQuery.size.width * 0.0118 * 2.1;
   }
 
+  static EdgeInsets padding10 =
+      EdgeInsets.symmetric(horizontal: height10, vertical: height10);
+
+  static EdgeInsets horizontalPadding10 =
+      EdgeInsets.symmetric(horizontal: height10);
+
   static EdgeInsets horizontalPadding20 =
       EdgeInsets.symmetric(horizontal: height10 * 2);
 

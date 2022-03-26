@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_college/const/string_const.dart';
+import 'package:my_college/controllers/college_controller.dart';
 import 'package:my_college/main.dart';
 import 'package:my_college/services/db/db_1.dart';
 import 'package:my_college/services/db/db_2.dart';
@@ -36,7 +37,6 @@ class AuthController extends GetxController {
     });
   }
 
-  //TODO:
   getUserInfo() async {
     final dbController2 = Get.put(DbController2(), permanent: true);
     await dbController2.getMyInfo();
@@ -44,8 +44,14 @@ class AuthController extends GetxController {
     await getCollegesInfo();
   }
 
-  getCollegesInfo() async {}
-  //TODO:
+  getCollegesInfo() async {
+    final collegeController = Get.put(CollegeController(), permanent: true);
+    await collegeController.getCollegesInfo();
+  }
+
+  String? email() {
+    return _auth.currentUser!.email;
+  }
 
   signOut() async {
     await _auth.signOut();
@@ -88,6 +94,7 @@ class AuthController extends GetxController {
       );
       User? user = userCredential.user;
       if (user != null) {
+        await getCollegesInfo();
         await doThis();
         await DbController1().saveUserInfo().then((value) async {
           final dbController2 = Get.put(DbController2(), permanent: true);
@@ -115,6 +122,7 @@ class AuthController extends GetxController {
       if (user != null) {
         await doThis();
         await getUserInfo();
+        await getCollegesInfo();
         if (userInfo < 1) {
           Get.to(() => OnboardingPage2());
         } else {

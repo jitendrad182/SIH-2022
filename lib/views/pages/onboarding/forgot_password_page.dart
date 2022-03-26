@@ -12,7 +12,6 @@ import 'package:my_college/views/widgets/custom_titles/custom_title_1.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
   ForgotPasswordPage({Key? key}) : super(key: key);
-  static const id = '/ForgotPasswordPage';
 
   final AuthController _controller = Get.find();
 
